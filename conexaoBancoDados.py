@@ -9,11 +9,12 @@ class dadosConexao:
 
 
 class acaoBancoDados(dadosConexao):
-    def __init__(self, ipServidor, bancoDados, usuario, senha, query):
+    def __init__(self, ipServidor, bancoDados, usuario, senha):
         dadosConexao.__init__(self, ipServidor, bancoDados, usuario, senha)
-        self.query = query
 
-    def executa(self):
+    def exec(self, query):
+        self.query = query
+        
         cnxn = pyodbc.connect(
             'DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + self.ipServidor + ';DATABASE=' + self.bancoDados + ';UID=' + self.usuario + ';PWD=' + self.senha + ';TrustServerCertificate=YES')
         cursor = cnxn.cursor()
