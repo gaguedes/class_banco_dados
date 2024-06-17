@@ -15,9 +15,9 @@ senha = f'Abc1234'
 
 conexao = conexaoBancoDados.conexao(ipServidor, bancoDados, usuario, senha)
 ```
-Para realizar a primneira consulta, basta utilizar o método "exec" que existe na classe "conexao", passando a query:
+Para realizar a primeira consulta, basta utilizar o método "exec" que existe na classe "conexao", passando a query:
 ```
 query = 'SELECT TOP 1 * FROM [dbo].[Table]'
 resultado = conexao.exec(query)
 ```
-A função "exec" irá retornar os resultados em forma de lista, em caso de queries que realizem ações como Insert ou Update, o retorno será uma mensagem se sucesso ou erro.
+A função "exec" irá retornar os resultados em forma de lista. Em caso de queries que realizem ações como Insert ou Update, o retorno será uma mensagem de sucesso ou erro.
